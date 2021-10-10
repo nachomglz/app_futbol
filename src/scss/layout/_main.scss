@@ -1,0 +1,14 @@
+
+.message {
+    color: $blanco;
+    padding: 2rem;
+    text-align: center;
+    border-radius: 15px;
+}
+
+.success-message {
+    background-color: $verde;
+}
+.fail-message {
+    background-color: $rojo;
+}

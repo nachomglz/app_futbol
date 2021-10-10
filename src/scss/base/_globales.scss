@@ -1,0 +1,100 @@
+html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+}
+* {
+    -webkit-tap-highlight-color: transparent;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.6rem;
+    line-height: 1.8;
+    padding-bottom: $separacion;
+}
+a {
+    text-decoration: none;
+    text-align: center;
+}
+.contenedor {
+    width: 95%;
+    max-width: 120rem;
+    margin: 0 auto;
+}
+.bg-blue {
+    background-color: $azul;
+}
+.bg-light-blue {
+    background-color: lighten($azul, 20);
+}
+.bg-grey {
+    background-color: $gris;
+}
+.bg-light-grey {
+    background-color: lighten($gris, 30);
+}
+.d-flex {
+    display: flex;
+}
+.contenedor-formulario {
+    background-color: $blanco;
+    box-shadow: 0 3px 3px rgba(0,0,0,0.2);
+    border-radius: 10px;
+    padding: 2rem;
+    padding-top: .5rem;
+    margin-top: $separacion;
+    h2 {
+        margin-bottom: 4rem;
+        text-align: center;
+    }
+}
+.formulario {
+    input {
+        outline: none;
+        &::placeholder {
+            color: darken($gris, 30);
+        }
+    }
+    .placeholder {
+        position: fixed;
+        margin: 0;
+        color: darken($gris, 30);
+        margin-top: 1rem;
+        margin-left: 2rem;
+        transition: margin-top ease .3s ;
+        pointer-events: none;
+    }
+    
+    input[type='text'],
+    input[type='password'],
+    input[type='number'],
+    input[type='email'],
+    select {
+        width: 100%;
+        border-radius: 2rem;
+        border: none;
+        background-color: lighten($gris, 35);
+        padding: 1.5rem;
+        margin-bottom: 2.5rem;
+    }
+
+    .field {
+        text-align: center;
+    }
+
+    .boton {
+        height: 5rem;
+    }
+}
+
+.incorrect-form-field {
+    border: $rojo solid 3px !important;
+}
+.correct-form-field {
+    border: green 3px solid !important;
+}
+
+
+

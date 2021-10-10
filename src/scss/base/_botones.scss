@@ -1,0 +1,42 @@
+.boton {
+    display: block;
+    width: 100%;
+    color: $blanco;
+    padding: 1rem 3rem;
+    &:hover {
+        cursor: pointer;
+    }
+    border: none;
+    border-radius: 2rem;
+}
+
+.boton-azul {
+    background-color: $azul;
+    &:hover {
+        background-color: $naranja;
+    }
+}
+.boton-verde {
+    background-color: $verde;
+    &:hover {
+        background-color: darken($verde, 10);
+    }
+}
+.boton-amarillo {
+    background-color: $amarillo;
+    &:hover {
+        background-color: darken($amarillo, 10);
+    }
+}
+.boton-rojo {
+    background-color: $rojo;
+    &:hover {
+        background-color: darken($rojo, 10);
+    }
+}
+.boton-naranja {
+    background-color: $naranja;
+    &:hover {
+        background-color: darken($naranja, 10);
+    }
+}

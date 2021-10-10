@@ -1,0 +1,50 @@
+.player-info {
+    margin-top: 2rem;
+    border-radius: 15px;
+    background-color: $blanco;
+    padding: 2rem;
+    display: flex;
+    flex-direction: row;
+    gap: 3rem;
+    align-items: center;
+    .fas {
+        transform: translateY(-1px);
+        margin-right: 1rem;
+        color: darken($gris, 20);
+    }
+    @include tablet {
+        flex-direction: row;
+
+    }
+
+    img {
+        max-height: 20rem;
+        width: auto;
+    }
+
+    p {
+        font-size: 1.9rem;
+    }
+
+
+}
+
+.detailed-info {
+    display: grid;
+
+    .detailed-info__name {
+        display: flex;
+        align-items: center;
+        font-weight: $bold;
+        .detailed-info__name-name {
+            margin-right: .5rem;
+        }
+    }
+
+    .detailed-info__field {
+        display: flex;
+        align-items: center;
+    }
+}
+
+
