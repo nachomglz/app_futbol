@@ -33,7 +33,7 @@ function rellenarFechas() {
 function rellenarPaises() {
   // Realizar peticion AJAX al servidor
   $.ajax({
-    url: "countries.php",
+    url: "/countries.php",
     type: "GET",
     dataType: "json",
     success: function (res) {

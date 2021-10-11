@@ -113,19 +113,22 @@
       width: 100%;
     }
     .btn-descartar {
-      border: darken($gris, 20) 1px solid;
-      background: none;
-      color: darken($gris, 20);
+      color: lighten($gris, 20);
+      background-color: $blanco;
+      border: 1px solid lighten($gris, 20);
+      transition: all .2s ease-in-out;
       &:hover {
-        background: $gris;
-      }
+        background-color: lighten($gris, 30);
+        color: lighten($gris, 10);
+    }
     }
     .btn-seleccionar {
       border: none;
       background: $naranja;
       color: $blanco;
+      transition: all .2s ease-in-out;
       &:hover {
-        background: darken($naranja, 10);
+        background: $azul;
       }
     }
   }
@@ -171,8 +174,27 @@
 }
 
 .filter-wrapper {
-  margin-top: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 1rem;
+  // margin-top: 2rem;
   height: 7rem;
-  border-radius: 10px;
-  background-color: lighten($gris, 15);
+  // border-radius: 10px;
+  // background-color: lighten($gris, 15);
+  padding-left: 1rem;
+  padding-right: 1rem;
+  margin-bottom: -2rem;
+
+  select {
+    border-radius: 5px;
+    font-size: 1.8rem;
+    outline: none;
+    height: 50%;
+    width: 25rem;
+    border: none;
+    text-align: center;
+    background-color: $blanco;
+    color: black;
+  }
 }

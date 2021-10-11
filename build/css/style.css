@@ -910,20 +910,23 @@ select {
   width: 100%;
 }
 .players .descartar-seleccionar .btn-descartar {
-  border: #686868 1px solid;
-  background: none;
-  color: #686868;
+  color: #cecece;
+  background-color: #FFFFFF;
+  border: 1px solid #cecece;
+  transition: all 0.2s ease-in-out;
 }
 .players .descartar-seleccionar .btn-descartar:hover {
-  background: #9B9B9B;
+  background-color: #e8e8e8;
+  color: #b5b5b5;
 }
 .players .descartar-seleccionar .btn-seleccionar {
   border: none;
   background: #E54A1E;
   color: #FFFFFF;
+  transition: all 0.2s ease-in-out;
 }
 .players .descartar-seleccionar .btn-seleccionar:hover {
-  background: #ba3a16;
+  background: #30485F;
 }
 .players .boton {
   width: 20rem;
@@ -965,10 +968,25 @@ select {
 }
 
 .filter-wrapper {
-  margin-top: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 1rem;
   height: 7rem;
-  border-radius: 10px;
-  background-color: #c1c1c1;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  margin-bottom: -2rem;
+}
+.filter-wrapper select {
+  border-radius: 5px;
+  font-size: 1.8rem;
+  outline: none;
+  height: 50%;
+  width: 25rem;
+  border: none;
+  text-align: center;
+  background-color: #FFFFFF;
+  color: black;
 }
 
 .player-info {
