@@ -40,6 +40,12 @@ $.ajax({
     }
 });
 
+$('.filter').on('change', (e) => {
+    // e.target.value
+    
+
+
+  });
 
 
 
