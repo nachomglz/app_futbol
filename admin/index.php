@@ -50,15 +50,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 ?>
 
 <div class="contenedor opciones-admin">
-   <a class="boton boton-rojo" href="/admin/properties/pre-delete.php">Pre-eliminados</a>
-   <a class="boton boton-verde" href="/admin/properties/pre-select.php">Pre-seleccionados</a>
+   <a class="boton boton-rojo" href="/admin/properties/pre-delete.php">Descartados</a>
+   <a class="boton boton-verde" href="/admin/properties/pre-select.php">Seleccion</a>
 </div>
 
 <div class="contenedor filter-wrapper">
 
    <div class="filtros">
       <select name="height-filter" class="filter" id="height-filter">
-         <option disabled selected>Altura</option>
+         <option disabled selected value="">Altura</option>
          <option value="1.50">1.50 m</option>
          <option value="1.60">1.60 m</option>
          <option value="1.70">1.70 m</option>
@@ -68,7 +68,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
          <option value="2.10">2.10 m</option>
       </select>
       <select name="weight-filter" class="filter" id="weight-filter">
-         <option disabled selected>Peso</option>
+         <option disabled selected value="">Peso</option>
          <option value="50">50 kg</option>
          <option value="60">60 kg</option>
          <option value="70">70 kg</option>
@@ -77,7 +77,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
          <option value="100">100 kg</option>
       </select>
       <select name="age-filter" class="filter" id="age-filter">
-         <option disabled selected>Edad</option>
+         <option disabled selected value="">Edad</option>
          <option value="16">16 años</option>
          <option value="17">17 años</option>
          <option value="18">18 años</option>
@@ -91,13 +91,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
          <option value="26">> 25 años</option>
       </select>
       <select name="country-filter" class="filter" id="country-filter">
-         <option disabled selected>Pais</option>
+         <option disabled selected value="">Pais</option>
       </select>
       <select name="position-filter" class="filter" id="position-filter">
-         <option disabled selected>Posicion</option>
+         <option disabled selected value="">Posicion</option>
       </select>
       <select name="lateralidad-filter" class="filter" id="lateralidad-filter">
-         <option disabled selected>Lateralidad</option>
+         <option disabled selected value="">Lateralidad</option>
          <option value="Zurdo">Zurdo</option>
          <option value="Diestro">Diestro</option>
          <option value="Ambidextro">Ambidextro</option>
@@ -106,7 +106,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
    </div>
    <div class="funciones-filtros">
       <select name="filter-order" id="filter-order">
-         <option value="" disabled selected>Ordenar por:</option>
+         <option value="asc">Desde el mas antiguo</option>
+         <option value="desc">Desde el mas nuevo</option>
       </select>
       <button id="filter-submit" class="boton boton-naranja">Aplicar Filtros</button>
    </div>
@@ -115,49 +116,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 </div>
 
 <div class="contenedor players">
-
-
-   <?php while ($player = mysqli_fetch_assoc($resultado)) : ?>
-      <div class="player" data-id="<?php echo $player['id'] ?>">
-
-         <div class="more-info-button">
-            <a href="player.php?id=<?php echo $player['id'] ?>">
-               <i class="fas fa-info-circle"></i>
-            </a>
-         </div>
-
-         <div class="circular-image-wrapper" style="background-image: url('/imagenes/<?php echo $player['image']; ?>');">
-            <!-- <img class="player-image" src="../imagenes/<?php echo $player['image'] ?>" alt="player image"> -->
-         </div>
-         <div class="name-info">
-            <p class="name"><?php echo ucwords(strtolower($player['name'])) ?></p>
-            <p class="surname"><?php echo ucwords(strtolower($player['surname'])) ?></p>
-         </div>
-         <div class="measure-info">
-            <p class="height"> <i class="fas fa-male"></i> <?php echo $player['height'] . ' m' ?></p>
-            <p class="weight"> <i class="fas fa-weight"></i> <?php echo $player['weight'] . ' kg' ?></p>
-         </div>
-         <div class="lateralidad-info">
-            <p class="lateralidad"><i class="fas fa-shoe-prints"></i> <?php echo isset($player['lateralidad']) ? $player['lateralidad'] : 'Desconocido'; ?></p>
-         </div>
-         <div class="descartar-seleccionar">
-            <form method="post">
-               <input type="hidden" name="id" value="<?php echo $player['id']; ?>">
-               <input type="hidden" name="op" value="1">
-               <button type="submit" class="btn-descartar">Descartar</button>
-            </form>
-            <form method="post">
-               <input type="hidden" name="id" value="<?php echo $player['id']; ?>">
-               <input type="hidden" name="op" value="2">
-               <button type="submit" class="btn-seleccionar">Seleccionar</button>
-            </form>
-         </div>
-      </div> <!-- .player -->
-   <?php endwhile; ?>
-
+   
 </div> <!-- .players -->
 
 <script src="../build/js/admin.js"></script>
 
 <?php
+
 include dirname(__DIR__) . '/includes/templates/footer_admin.php';
