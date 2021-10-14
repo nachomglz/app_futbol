@@ -69,8 +69,6 @@ function filterPlayers() {
       }
     });
 
-
-
   })
 
 }
@@ -142,7 +140,16 @@ function descartarPlayer(id) {
   });
 }
 function seleccionarPlayer(id) {
-  console.log('se esta seleccionando al jugador: ' + id)
+  $.ajax({
+    type: "post",
+    url: "/admin/properties/seleccionar-player.php",
+    data: {
+      id: id,
+    },
+    success: function (res) {
+      getPlayers();
+    },
+  });
 }
 
 // indexOfRegex(['height > 20', 'height > 83.2', 'height = "Zurdo"'], /height [=><] */);

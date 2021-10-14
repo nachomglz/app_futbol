@@ -1,18 +1,15 @@
 <?php
-include '../../includes/templates/header_properties.php';
+include dirname(__DIR__) . '/includes/templates/header.php';
+require dirname(__DIR__) . "/includes/app.php";
 
-require "../../includes/app.php";
-$auth = autenticated();
-if (!$auth) {
+
+if (!isset($_SESSION)) {
+    session_start();
+ }
+ $auth = $_SESSION['login'] ?? false;
+ if (!$auth) {
     header('Location: /');
-}
-
-// Conectar con la base de datos
-$db = connect();
-
-//Obtener jugadores pre-eliminados
-$query = "SELECT * FROM player where predeleted = true";
-$resultado = mysqli_query($db, $query);
+ }
 
 //Confirmar delete / recuperar
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -49,7 +46,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 </div> <!-- .players -->
 
 
-
-
-<?php
-include '../../includes/templates/footer_properties.php';
+    <script src="/build/js/pre-delete.js"></script>
+    <script src="/build/js/header.js"></script>
+</body>
+</html>

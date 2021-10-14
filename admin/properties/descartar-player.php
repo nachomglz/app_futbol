@@ -7,7 +7,7 @@
       if (!isset($_POST['id'])) {
          echo json_encode(array("success" => false, "error" => "No se ha recibido ningun parametro en la peticion ajax"));
       } else {
-         $query = "UPDATE player SET preselected = true WHERE id = {$_POST['id']}";
+         $query = "UPDATE player SET predeleted = true WHERE id = {$_POST['id']}";
          if (!$db) {
             echo json_encode(array("success" => false, "error" => "Ha ocurrido un error al conectar con la base de datos, inténtalo mas tarde"));
          } else {

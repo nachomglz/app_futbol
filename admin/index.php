@@ -1,5 +1,5 @@
 <?php
-include dirname(__DIR__) . '\includes\templates\header_admin.php';
+include dirname(__DIR__) . '/includes/templates/header.php';
 require dirname(__DIR__) . '\includes\app.php';
 
 if (!isset($_SESSION)) {
@@ -49,10 +49,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 ?>
 
-<div class="contenedor opciones-admin">
-   <a class="boton boton-rojo" href="/admin/properties/pre-delete.php">Descartados</a>
-   <a class="boton boton-verde" href="/admin/properties/pre-select.php">Seleccion</a>
-</div>
+<!-- <div class="contenedor opciones-admin">
+   <a class="boton boton-rojo" href="/admin/pre-delete.php">Descartados</a>
+   <a class="boton boton-verde" href="/admin/pre-select.php">Seleccion</a>
+</div> -->
+
+<h1 class="page-indentifyer contenedor">Ver todos los jugadores</h1>
+
 
 <div class="contenedor filter-wrapper">
 
@@ -88,7 +91,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
          <option value="23">23 años</option>
          <option value="24">24 años</option>
          <option value="25">25 años</option>
-         <option value="26">> 25 años</option>
       </select>
       <select name="country-filter" class="filter" id="country-filter">
          <option disabled selected value="">Pais</option>
@@ -104,6 +106,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       </select>
 
    </div>
+
+</div>
+
+<div class="contenedor" style="display:flex;justify-content:flex-end;">
    <div class="funciones-filtros">
       <select name="filter-order" id="filter-order">
          <option value="asc">Desde el mas antiguo</option>
@@ -111,16 +117,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       </select>
       <button id="filter-submit" class="boton boton-naranja">Aplicar Filtros</button>
    </div>
-
-
 </div>
 
 <div class="contenedor players">
    
 </div> <!-- .players -->
 
-<script src="../build/js/admin.js"></script>
-
-<?php
-
-include dirname(__DIR__) . '/includes/templates/footer_admin.php';
+   <script src="/build/js/admin.js"></script>
+   <script src="/build/js/header.js"></script>
+</body>
+</html>

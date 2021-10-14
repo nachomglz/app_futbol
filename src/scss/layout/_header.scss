@@ -21,17 +21,25 @@
             margin-top: 1rem;
         }
     }
+    .close-session {
+        background-color: $naranja !important;
+        padding: .5rem 1rem;
+    }
 }
 
 .navegacion-principal {
     display: none;
     justify-content: space-between;
+    align-items: center;
     gap: $separacion;
     a {
         letter-spacing: .5px;
         transition: transform .3s ease;
-        &:hover {
-            transform: scale(1.05);
+        // &:hover {
+        //     transform: scale(1.05);
+        // }
+        &.activePage {
+            border-bottom: 2px solid $naranja;
         }
         
     }

@@ -1,16 +1,15 @@
 <?php
-include '../../includes/templates/header_properties.php';
+include dirname(__DIR__) . '/includes/templates/header.php';
+require dirname(__DIR__) . "/includes/app.php";
 
-require "../../includes/app.php";
-$auth = autenticated();
+
+if (!isset($_SESSION)) {
+    session_start();
+}
+$auth = $_SESSION['login'] ?? false;
 if (!$auth) {
    header('Location: /');
 }
-
-// echo '<pre>';    
-// var_dump($_POST);
-// echo '</pre>';    
-// die();
 
 // Conectar con la base de datos
 $db = connect();
@@ -50,7 +49,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 </div> <!-- .players -->
 
 
-
-
-<?php
-include '../../includes/templates/footer_properties.php';
+   <script src="/build/js/pre-select.js"></script>
+   <script src="/build/js/header.js"></script>
+</body>
+</html>

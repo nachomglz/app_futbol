@@ -21,12 +21,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   <h2>Login</h2>
   <form action="login.php" method="POST" class="formulario formulario-login" autocomplete="off">
     <div class="field user-field">
-      <label class="placeholder placeholder-username">Username</label>
-      <input autocomplete="false" type="text" name="username" id="username">
+      <input type="text" name="username" id="username" placeholder="Username">
     </div>
     <div class="field password-field">
-      <label class="placeholder placeholder-password">Password</label>
-      <input autocomplete="false" type="password" name="password" id="password">
+      <input type="password" name="password" id="password" placeholder="Password">
     </div>
     <input type="submit" value="Login" class="boton boton-azul">
   </form>

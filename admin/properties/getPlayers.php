@@ -17,6 +17,17 @@
 
    if (isset($_GET['query'])) {
       $query = $_GET['query'];
+   } elseif(isset($_GET['properties'])) {
+      $propiedades = $_GET['properties'];
+   
+      if (isset($propiedades['preselected'])) {
+         // echo 'preseleccionados';
+         $query = "SELECT * FROM player WHERE preselected = true";
+      } else {
+         // echo 'preeliminados';
+         $query = "SELECT * FROM player WHERE predeleted = true";
+      }
+
    } else {
       $query = "SELECT * FROM player WHERE preselected = false AND predeleted = false";
    }
@@ -29,7 +40,7 @@
 
 <div class="player" data-id="<?php echo $player['id']; ?>">
    <div class="more-info-button">
-         <a href="player.php?id="<?php echo $player['id']; ?>">
+         <a href="player.php?id=<?php echo $player['id']; ?>">
             <i class="fas fa-info-circle"></i>
          </a>
    </div>
@@ -64,11 +75,3 @@
 </div> <!-- .player -->
 
 <?php endwhile; ?>
-
-<!-- 
-   Idea basica para los filtros
-
-if (isset(filtros[])) {
-   $query = $query . ' where '
-} 
--->

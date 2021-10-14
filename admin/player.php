@@ -1,11 +1,15 @@
 <?php
-    include '../includes/templates/header_admin.php';
-    require "../includes/app.php";
+    include dirname(__DIR__) . '/includes/templates/header.php';
+    require dirname(__DIR__) . '/includes/app.php';
 
-    $auth = autenticated();
+
+    if (!isset($_SESSION)) {
+        session_start();
+    }
+    $auth = $_SESSION['login'] ?? false;
+
     if (!$auth) {
         header('Location: /');
-
     }
 
     $player_id = intval( $_GET['id'] );
@@ -19,7 +23,6 @@
     //Ejecutar query y obtener resultados
     $resultado = mysqli_query($db, $query);
     $player = mysqli_fetch_assoc($resultado);
-
 ?>
 
     <div class="contenedor player-info">
@@ -62,6 +65,6 @@
         </div> <!-- .detailed-info -->
     </div> <!-- .player-info -->
 
-<?php 
-include '../includes/templates/footer_admin.php';
-?>
+   <script src="/build/js/header.js"></script>
+</body>
+</html>

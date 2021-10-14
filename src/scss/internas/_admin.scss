@@ -1,15 +1,15 @@
-.opciones-admin {
+@font-face {
+  font-family: "grotesk";
+  src: url('/build/fonts/HKGroteskWide-ExtraBold.otf');
+}
+
+.page-indentifyer {
+  text-transform: uppercase;
   margin-top: 2rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 3rem;
+  font-family: grotesk;
+  color: $azul;
 }
-@include tablet {
-  .opciones-admin {
-    flex-direction: row;
-  }
-}
+
 .players {
   display: grid;
   grid-template-columns: repeat(1, 1fr);
@@ -153,8 +153,9 @@
   flex-direction: column;
   gap: 1.5rem; 
   background-color: lighten($gris, 20);
-  border-radius: 5px;
-  padding: 1rem 2rem;
+  border-radius: 10px;
+  padding: 2rem 3rem;
+  margin-top: 2rem;
   .filtros {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
@@ -162,38 +163,48 @@
     margin: 0 auto;
     width: 100%;
   }
-  .funciones-filtros {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    gap: 1rem;
-    width: 100%;
-
-    button {
-      border-radius: 5px !important;
-      width: 20rem;
-    }
-    select {
-      width: 20rem;
-    }
-    
-  }
   @include tablet {
     .filtros {
       grid-template-columns: repeat(6, 1fr);
     }
   }
+
+  
+}
+select {
+  border-radius: 5px;
+  font-size: 1.8rem;
+  outline: none;
+  height: 3rem;
+  width: 100%;
+  border: none;
+  text-align: center;
+  background-color: $blanco;
+  color: black;
+}
+.funciones-filtros {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-top: 2rem;
+  background-color: $naranja;
+  padding: 1.5rem;
+  width: 100%;
+  border-radius: 1rem;
+
   select {
-    border-radius: 5px;
-    font-size: 1.8rem;
-    outline: none;
-    height: 3rem;
     width: 100%;
-    border: none;
-    text-align: center;
-    background-color: $blanco;
-    color: black;
+    height: 6rem;
+    border-radius: 15px;
   }
+
+  button {
+    background-color: $azul;
+    height: 6rem;
+  }
+
+
+
 }
 .measure-info {
   display: flex;

@@ -1,12 +1,32 @@
 .contenedor-formulario-login {
     width: 95%;
     max-width: 40rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding-top: 2rem;
+    h2 {
+        margin: 0;
+    }
 }
 
 .formulario-login {
     display: flex;
     position: relative;
     flex-direction: column;
-    gap: 1rem;
+    align-items: center;
+    gap: 2.5rem;
 
+    input[type=text],
+    input[type=password], 
+    input[type=submit] {
+        width: 30rem;
+    }
+
+    input[type=submit] {
+        transition: background-color ease-in-out .2s;
+    }
 }
+
+
+
